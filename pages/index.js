@@ -23,12 +23,10 @@ export default function Index({ allPosts, preview }) {
 				<Head>
 					<title>Blog. | {CMS_NAME}</title>
 				</Head>
-				<div
-					className='bg-cover bg-center bg-no-repeat h-screen'
-					style={styles.heroImage}>
+				<div className='bg-cover bg-center bg-no-repeat h-screen'>
 					<Container>
-						{/* <Header /> */}
-						<Intro />
+						<Header />
+						{/* <Intro /> */}
 						{/* {heroPost && (
 							<HeroPost
 								title={heroPost.title}
