@@ -16,7 +16,7 @@ export default function PostPreview({ title, slug }) {
 				{`
 					.underline-teal-400 {
 						text-decoration: underline;
-						text-decoration-color: #4fd1c5 !important;
+						text-decoration-color: #4fd1c5;
 					}
 				`}
 			</style>
