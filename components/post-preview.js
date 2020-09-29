@@ -3,16 +3,16 @@ import Link from 'next/link';
 export default function PostPreview({ title, slug }) {
 	return (
 		<div>
-			<div
-				className={`p-2 pl-4 mb-4 rounded-lg cursor-pointer transition ease-in-out duration-300`}>
-				<h3
-					className={`leading-tight font-semibold text-xl text-black underline-teal-400`}>
-					<Link as={`/posts/${slug}`} href='/posts/[slug]'>
+			<Link as={`/posts/${slug}`} href='/posts/[slug]'>
+				<div
+					className={`p-2 pl-4 mb-4 bg-white md:bg-opacity-75 hover:bg-opacity-100 cursor-pointer transition ease-in-out duration-300`}>
+					<h3
+						className={`leading-tight font-semibold text-xl text-black underline-teal-400`}>
 						<a className=''>{title}</a>
-					</Link>
-				</h3>
-			</div>
-			<style jsx>
+					</h3>
+				</div>
+			</Link>
+			<style jsx global>
 				{`
 					.underline-teal-400 {
 						text-decoration: underline;

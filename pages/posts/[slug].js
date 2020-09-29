@@ -42,14 +42,22 @@ export default function Post({ post, morePosts, preview }) {
 							<PostBody content={post.content} />
 						</article>
 						<SectionSeparator />
-						<h2 className='text-black text-2xl md:text-3xl font-bold mb-6 tracking-tighter'>
-							More.
+						<h2 className='text-2xl md:text-3xl font-bold tracking-tight md:tracking-tighter leading-tight bg-white px-1 mb-12'>
+							<a className='underline-teal-400 text-black'>More</a>.
 						</h2>
 						<div className='mb-40'>
 							{morePosts.length > 0 && (
 								<MoreStories posts={morePosts} style={``} />
 							)}
 						</div>
+						<style jsx global>
+							{`
+								.underline-teal-400 {
+									text-decoration: underline;
+									text-decoration-color: #4fd1c5;
+								}
+							`}
+						</style>
 					</>
 				)}
 			</Container>

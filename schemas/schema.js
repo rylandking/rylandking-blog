@@ -44,7 +44,7 @@ export default createSchema({
 					name: 'content',
 					title: 'Content',
 					type: 'array',
-					of: [{ type: 'block' }],
+					of: [{ type: 'block' }, { type: 'figure' }],
 				},
 				{
 					name: 'excerpt',

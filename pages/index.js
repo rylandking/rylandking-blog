@@ -23,7 +23,9 @@ export default function Index({ allPosts, preview }) {
 				<Head>
 					<title>Blog. | {CMS_NAME}</title>
 				</Head>
-				<div className='bg-cover bg-center bg-no-repeat h-screen'>
+				<div
+					className='bg-cover bg-center bg-no-repeat h-screen'
+					style={styles.heroImage}>
 					<Container>
 						<Header />
 						{/* <Intro /> */}
@@ -45,7 +47,7 @@ export default function Index({ allPosts, preview }) {
 					</Container>
 				</div>
 				<Avatar name={CMS_NAME} picture={HOME_OG_IMAGE_URL} />
-				<style jsx>{`
+				<style jsx global>{`
 					.h-screen-minus-header {
 						height: calc(100vh - 11rem);
 					}

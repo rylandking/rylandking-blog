@@ -1,7 +1,16 @@
+import React from 'react';
 import markdownStyles from './markdown-styles.module.css';
 import BlockContent from '@sanity/block-content-to-react';
 import getYouTubeId from 'get-youtube-id';
 import YouTube from 'react-youtube';
+
+import sanityClient from '../lib/sanity';
+import imageUrlBuilder from '@sanity/image-url';
+
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+	return builder.image(source);
+}
 
 const serializers = {
 	types: {
@@ -9,6 +18,15 @@ const serializers = {
 			const { url } = node;
 			const id = getYouTubeId(url);
 			return <YouTube videoId={id} />;
+		},
+		figure: ({ node }) => {
+			const { image, alt } = node;
+			return (
+				<img
+					src={urlFor(image.asset).width(1920).height(1080).url()}
+					alt={`${alt}`}
+				/>
+			);
 		},
 	},
 };
