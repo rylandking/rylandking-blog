@@ -37,7 +37,6 @@ const serializers = {
 			);
 		},
 		twitter: ({ node }) => {
-			// console.log(node.id);
 			return (
 				<div className='flex justify-center'>
 					<TwitterTweetEmbed tweetId={node.id} />
@@ -49,9 +48,7 @@ const serializers = {
 
 export default function PostBody({ content, tweetEmbed }) {
 	let tweetId = tweetEmbed;
-	// if (tweetEmbed) {
-	// 	tweetId = tweetEmbed.split('status/')[1].split('?')[0];
-	// }
+	console.log(tweetId);
 
 	return (
 		<>
@@ -65,7 +62,7 @@ export default function PostBody({ content, tweetEmbed }) {
 					Ok, thank you for reading!
 					<br></br>
 					<br></br>
-					I'll be honest, this post did take a few hours to put together.
+					I'll be honest, this post took a few hours to put together.
 					<br></br>
 					<br></br>
 					If you’d like to say, "Thank you" please retweet the thread on
