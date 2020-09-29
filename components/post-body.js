@@ -48,7 +48,10 @@ const serializers = {
 };
 
 export default function PostBody({ content, tweetEmbed }) {
-	const tweetId = tweetEmbed.split('status/')[1].split('?')[0];
+	let tweetId = tweetEmbed;
+	// if (tweetEmbed) {
+	// 	tweetId = tweetEmbed.split('status/')[1].split('?')[0];
+	// }
 
 	return (
 		<>
