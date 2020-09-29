@@ -39,7 +39,7 @@ export default function Post({ post, morePosts, preview }) {
 								date={post.date}
 								author={post.author}
 							/>
-							<PostBody content={post.content} />
+							<PostBody content={post.content} tweetEmbed={post.tweetEmbed} />
 						</article>
 						<SectionSeparator />
 						<h2 className='text-2xl md:text-3xl font-bold tracking-tight md:tracking-tighter leading-tight bg-white px-1 mb-12'>
@@ -53,6 +53,10 @@ export default function Post({ post, morePosts, preview }) {
 						<style jsx global>
 							{`
 								.underline-teal-400 {
+									text-decoration: underline;
+									text-decoration-color: #4fd1c5;
+								}
+								a {
 									text-decoration: underline;
 									text-decoration-color: #4fd1c5;
 								}

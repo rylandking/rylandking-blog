@@ -4,6 +4,7 @@ import Intro from '../components/intro';
 import Header from '../components/header';
 import Layout from '../components/layout';
 import Avatar from '../components/avatar';
+import Subscribe from '../components/subscribe';
 import { getAllPostsForHome } from '../lib/api';
 import Head from 'next/head';
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants';
@@ -39,11 +40,11 @@ export default function Index({ allPosts, preview }) {
 								excerpt={heroPost.excerpt}
 							/>
 						)} */}
-						<div className='h-screen-minus-header overflow-y-auto'>
-							{allPosts.length > 0 && (
-								<MoreStories posts={allPosts} style={``} />
-							)}
-						</div>
+						<Subscribe
+							mt='mt-32'
+							width='w-11/12 md:w-8/12 lg:w-4/12'
+							buttonBorder=''
+						/>
 					</Container>
 				</div>
 				<Avatar name={CMS_NAME} picture={HOME_OG_IMAGE_URL} />
