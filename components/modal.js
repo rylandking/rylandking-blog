@@ -23,7 +23,7 @@ export default function Modal({ openOnLoadWithMethod }) {
 	return (
 		<div
 			onClick={(e) => outsideClick(e)}
-			className={`z-20 fixed left-0 top-0 h-full w-full bg-white bg-opacity-75 ${
+			className={`z-20 fixed left-0 top-0 h-full w-full bg-gray-700 bg-opacity-75 ${
 				isSubscribeModalOpen ? '' : 'hidden'
 			}`}>
 			<div className='w-full h-full sm:h-auto sm:w-7/12 lg:w-5/12 xl:w-1/3 m-auto sm:mt-32 sm:mb-48 bg-white border fixed bottom-0 inset-x-0 inset-0 flex items-center justify-center cursor-default'>

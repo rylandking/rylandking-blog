@@ -39,7 +39,7 @@ export default function Subscribe({ mt, width, method, buttonBorder }) {
 							</div>
 							<br></br>
 							<div className='w-full text-center bg-white text-black font-bold text-lg leading-6 p-1'>
-								<a href='/'>Learn from past posts here</a>.
+								<a href='/'>Read past learnings here</a>.
 							</div>
 						</>
 					)}
