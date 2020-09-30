@@ -57,34 +57,44 @@ export default function PostBody({ content, tweetEmbed }) {
 					serializers={serializers}
 					className={markdownStyles.markdown}
 				/>
-				<div className='mt-5'>
-					Ok, thank you for reading!
-					<br></br>
-					<br></br>
-					I'll be honest, this post took a few hours to put together.
-					<br></br>
-					<br></br>
-					If you’d like to say, "Thank you" please retweet the thread on
-					Twitter.
-					<br></br>
-					<br></br>
-					That would be the most meaningful way to say, "Thanks".
+				<div className='mx-16 md:mx-32 my-12'>
+					<hr />
 				</div>
-				<div className='flex justify-center mt-4'>
-					<TwitterTweetEmbed tweetId={tweetId} />
-				</div>
-				<div className='mt-5'>
-					If you'd like more key learnings, join my email list below.
-					<br></br>
-					<br></br>
-					Yew!
-					<br></br>
-					–Ryland
-					<Subscribe
-						mt='mt-8'
-						width='w-3/4 md:w-1/2 lg:w-2/3'
-						buttonBorder='border-gray-600'
-					/>
+				<div className='text-lg text-gray-800'>
+					{tweetId && (
+						<div>
+							<div className='mt-5'>
+								Ok, thank you for reading!
+								<br></br>
+								<br></br>
+								I'll be honest, this post took a few hours to put together.
+								<br></br>
+								<br></br>
+								If you’d like to say, "Thank you" please retweet the thread on
+								Twitter.
+								<br></br>
+								<br></br>
+								That would be the most meaningful way to say, "Thanks".
+							</div>
+							<div className='flex justify-center mt-4'>
+								<TwitterTweetEmbed tweetId={tweetId} />
+							</div>
+						</div>
+					)}
+					<div className='mt-5'>
+						If you'd like more key learnings, join my email list below.
+						<br></br>
+						<br></br>
+						Yew!
+						<br></br>
+						<br></br>
+						–Ryland
+						<Subscribe
+							mt='mt-8'
+							width='w-3/4 md:w-1/2 lg:w-2/3'
+							buttonBorder='border-gray-600'
+						/>
+					</div>
 				</div>
 			</div>
 			<style jsx global>{`

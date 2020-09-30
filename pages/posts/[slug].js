@@ -7,10 +7,13 @@ import Header from '../../components/header';
 import PostHeader from '../../components/post-header';
 import SectionSeparator from '../../components/section-separator';
 import Layout from '../../components/layout';
+import ExitIntentDiv from '../../components/exit-intent-div';
+import Modal from '../../components/modal';
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api';
 import PostTitle from '../../components/post-title';
 import Head from 'next/head';
 import { CMS_NAME } from '../../lib/constants';
+import { GlobalProvider } from '../../context/GlobalState';
 
 export default function Post({ post, morePosts, preview }) {
 	const router = useRouter();
@@ -19,53 +22,62 @@ export default function Post({ post, morePosts, preview }) {
 	}
 
 	return (
-		<Layout preview={preview}>
-			<Container>
-				<Header />
-				{router.isFallback ? (
-					<PostTitle>Loading…</PostTitle>
-				) : (
-					<>
-						<article>
-							<Head>
-								<title>
-									{post.title} | {CMS_NAME}
-								</title>
-								{/* <meta property='og:image' content={post.ogImage.url} /> */}
-							</Head>
-							<PostHeader
-								title={post.title}
-								coverImage={post.coverImage}
-								date={post.date}
-								author={post.author}
-							/>
-							<PostBody content={post.content} tweetEmbed={post.tweetEmbed} />
-						</article>
-						<SectionSeparator />
-						<h2 className='text-2xl md:text-3xl font-bold tracking-tight md:tracking-tighter leading-tight bg-white px-1 mb-12'>
-							<a className='underline-teal-400 text-black'>More</a>.
-						</h2>
-						<div className='mb-40'>
-							{morePosts.length > 0 && (
-								<MoreStories posts={morePosts} style={``} />
-							)}
-						</div>
-						<style jsx global>
-							{`
-								.underline-teal-400 {
-									text-decoration: underline;
-									text-decoration-color: #4fd1c5;
-								}
-								a {
-									text-decoration: underline;
-									text-decoration-color: #4fd1c5;
-								}
-							`}
-						</style>
-					</>
-				)}
-			</Container>
-		</Layout>
+		<>
+			<GlobalProvider>
+				<Layout preview={preview}>
+					<Container>
+						<Header />
+						{router.isFallback ? (
+							<PostTitle>Loading…</PostTitle>
+						) : (
+							<>
+								<ExitIntentDiv />
+								<article>
+									<Head>
+										<title>
+											{post.title} | {CMS_NAME}
+										</title>
+										{/* <meta property='og:image' content={post.ogImage.url} /> */}
+									</Head>
+									<PostHeader
+										title={post.title}
+										coverImage={post.coverImage}
+										date={post.date}
+										author={post.author}
+									/>
+									<PostBody
+										content={post.content}
+										tweetEmbed={post.tweetEmbed}
+									/>
+								</article>
+								<SectionSeparator />
+								<h2 className='text-2xl md:text-3xl font-bold tracking-tight md:tracking-tighter leading-tight bg-white px-1 mb-12'>
+									<a className='underline-teal-400 text-black'>More</a>.
+								</h2>
+								<div className='mb-40'>
+									{morePosts.length > 0 && (
+										<MoreStories posts={morePosts} style={``} />
+									)}
+								</div>
+								<style jsx global>
+									{`
+										.underline-teal-400 {
+											text-decoration: underline;
+											text-decoration-color: #4fd1c5;
+										}
+										a {
+											text-decoration: underline;
+											text-decoration-color: #4fd1c5;
+										}
+									`}
+								</style>
+							</>
+						)}
+						<Modal />
+					</Container>
+				</Layout>
+			</GlobalProvider>
+		</>
 	);
 }
 
