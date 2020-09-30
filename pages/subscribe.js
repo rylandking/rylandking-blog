@@ -22,7 +22,7 @@ export default function Index({ allPosts, preview }) {
 		<>
 			<Layout preview={preview}>
 				<Head>
-					<title>Blog. | {CMS_NAME}</title>
+					<title>Subscribe. | {CMS_NAME}</title>
 				</Head>
 				<div
 					className='bg-cover bg-center bg-no-repeat h-screen'
@@ -44,6 +44,7 @@ export default function Index({ allPosts, preview }) {
 							mt='mt-32'
 							width='w-11/12 md:w-8/12 lg:w-4/12'
 							buttonBorder=''
+							method='subscribe'
 						/>
 					</Container>
 				</div>
@@ -59,6 +60,10 @@ export default function Index({ allPosts, preview }) {
 					a {
 						text-decoration: underline;
 						text-decoration-color: #4fd1c5;
+					}
+					.underline-red-400 {
+						text-decoration: underline;
+						text-decoration-color: #f56565;
 					}
 				`}</style>
 			</Layout>

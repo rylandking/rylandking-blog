@@ -38,7 +38,7 @@ const serializers = {
 		},
 		twitter: ({ node }) => {
 			return (
-				<div className='flex justify-center'>
+				<div className='flex justify-center mt-4'>
 					<TwitterTweetEmbed tweetId={node.id} />
 				</div>
 			);
@@ -48,7 +48,6 @@ const serializers = {
 
 export default function PostBody({ content, tweetEmbed }) {
 	let tweetId = tweetEmbed;
-	console.log(tweetId);
 
 	return (
 		<>
