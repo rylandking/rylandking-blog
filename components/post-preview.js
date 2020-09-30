@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function PostPreview({ title, slug }) {
 	return (
-		<div>
+		<div className='block'>
 			<Link as={`/posts/${slug}`} href='/posts/[slug]'>
 				<div
-					className={`p-2 pl-4 mb-4 bg-white md:bg-opacity-75 hover:bg-opacity-100 cursor-pointer transition ease-in-out duration-300`}>
+					className={`p-2 pl-4 mb-6 md:mb-4 inline-block bg-white md:bg-opacity-75 hover:bg-opacity-100 cursor-pointer transition ease-in-out duration-300`}>
 					<h3
 						className={`leading-tight font-semibold text-xl text-black underline-teal-400`}>
 						<a className=''>{title}</a>

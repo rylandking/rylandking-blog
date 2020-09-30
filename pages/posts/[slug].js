@@ -52,7 +52,10 @@ export default function Post({ post, morePosts, preview }) {
 								</article>
 								<SectionSeparator />
 								<h2 className='text-2xl md:text-3xl font-bold tracking-tight md:tracking-tighter leading-tight bg-white px-1 mb-12'>
-									<a className='underline-teal-400 text-black'>More</a>.
+									<a href='/' className='underline-teal-400 text-black'>
+										More
+									</a>
+									.
 								</h2>
 								<div className='mb-40'>
 									{morePosts.length > 0 && (

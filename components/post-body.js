@@ -82,6 +82,13 @@ export default function PostBody({ content, tweetEmbed }) {
 						</div>
 					)}
 					<div className='mt-5'>
+						{!tweetId && (
+							<span>
+								Thanks for taking a moment to read this post.
+								<br></br>
+								<br></br>
+							</span>
+						)}
 						If you'd like more key learnings, join my email list below.
 						<br></br>
 						<br></br>

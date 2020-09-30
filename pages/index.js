@@ -54,7 +54,7 @@ export default function Index({ allPosts, preview }) {
 					<Avatar name={CMS_NAME} picture={HOME_OG_IMAGE_URL} />
 					<style jsx global>{`
 						.h-screen-minus-header {
-							height: calc(100vh - 11rem);
+							height: calc(100vh - 13rem);
 						}
 						.underline-teal-400 {
 							text-decoration: underline;
