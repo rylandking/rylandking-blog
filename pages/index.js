@@ -8,6 +8,7 @@ import ExitIntentDiv from '../components/exit-intent-div';
 import Modal from '../components/modal';
 import { getAllPostsForHome } from '../lib/api';
 import Head from 'next/head';
+import { GA_TRACKING_ID } from '../lib/gtag';
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants';
 import { GlobalProvider } from '../context/GlobalState';
 
@@ -26,6 +27,23 @@ export default function Index({ allPosts, preview }) {
 				<Layout preview={preview}>
 					<Head>
 						<title>Blog. | {CMS_NAME}</title>
+						{/* Global Site Tag (gtag.js) - Google Analytics */}
+						<script
+							async
+							src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+						/>
+						<script
+							dangerouslySetInnerHTML={{
+								__html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+							}}
+						/>
 					</Head>
 					<div
 						className='bg-cover bg-center bg-no-repeat h-screen'
