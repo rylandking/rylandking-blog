@@ -35,7 +35,7 @@ const serializers = {
 		},
 		twitter: ({ node }) => {
 			return (
-				<div className='flex justify-center mt-4'>
+				<div className='flex justify-start md:justify-center mt-4'>
 					<TwitterTweetEmbed tweetId={node.id} />
 				</div>
 			);
