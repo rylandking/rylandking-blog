@@ -28,7 +28,7 @@ const serializers = {
 		figure: ({ node }) => {
 			const { image, alt } = node;
 			return (
-				<div className='flex justify-center w-full h-18rem'>
+				<div className='flex justify-center w-full h-64 md:h-auto'>
 					<img
 						src={urlFor(image.asset).url()}
 						alt={`${alt}`}
