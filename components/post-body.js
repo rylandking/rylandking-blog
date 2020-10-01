@@ -28,7 +28,7 @@ const serializers = {
 		figure: ({ node }) => {
 			const { image, alt } = node;
 			return (
-				<div className='flex justify-center w-full h-18rem md:h-auto'>
+				<div className='flex justify-center w-full h-17rem'>
 					<img
 						src={urlFor(image.asset).url()}
 						alt={`${alt}`}
@@ -110,8 +110,9 @@ export default function PostBody({ content, tweetEmbed }) {
 					width: 88vw !important;
 					max-width: 640px;
 				}
-				h-18rem {
-					height: 18rem;
+				h-17rem {
+					width: 88vw;
+					max-width: 640px;
 				}
 			`}</style>
 		</>
