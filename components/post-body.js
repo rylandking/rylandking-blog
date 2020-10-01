@@ -29,11 +29,7 @@ const serializers = {
 			const { image, alt } = node;
 			return (
 				<div className='flex justify-center w-full h-64 md:h-auto'>
-					<img
-						src={urlFor(image.asset).url()}
-						alt={`${alt}`}
-						className='object-cover'
-					/>
+					<img src={urlFor(image.asset).url()} alt={`${alt}`} />
 				</div>
 			);
 		},
