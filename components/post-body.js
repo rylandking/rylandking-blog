@@ -73,7 +73,7 @@ export default function PostBody({ content, tweetEmbed }) {
 								<br></br>
 								That would be the most meaningful way to say, "Thanks".
 							</div>
-							<div className='flex justify-start md:justify-center w-full md:w-auto mt-4'>
+							<div className='flex justify-start md:justify-center w-64 md:w-auto mt-4'>
 								<TwitterTweetEmbed tweetId={tweetId} />
 							</div>
 						</div>
