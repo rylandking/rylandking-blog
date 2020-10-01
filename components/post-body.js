@@ -103,7 +103,7 @@ export default function PostBody({ content, tweetEmbed }) {
 			</div>
 			<style jsx global>{`
 				iframe {
-					width: 115% !important;
+					width: 100vw !important;
 					max-width: 640px;
 				}
 				@media (min-width: 768px) {
