@@ -7,11 +7,11 @@
 }
 
 .markdown ul {
-	@apply my-6 text-gray-800 list-disc;
+	@apply my-6 text-gray-800 list-disc pl-12;
 }
 
 .markdown ol {
-	@apply my-6 text-gray-800 list-decimal;
+	@apply my-6 text-gray-800 list-decimal pl-12;
 }
 
 .markdown blockquote {

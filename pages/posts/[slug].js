@@ -72,6 +72,14 @@ export default function Post({ post, morePosts, preview }) {
 											text-decoration: underline;
 											text-decoration-color: #4fd1c5;
 										}
+										ul {
+											list-style-type: disc;
+											padding-left: 3rem;
+										}
+										ol {
+											list-style-type: decimal;
+											padding-left: 3rem;
+										}
 									`}
 								</style>
 							</>
