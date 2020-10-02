@@ -80,6 +80,14 @@ export default function Post({ post, morePosts, preview }) {
 											list-style-type: decimal;
 											padding-left: 3rem;
 										}
+										blockquote {
+											margin-top: 1.25rem;
+											margin-bottom: 1.25rem;
+											margin-left: 2rem;
+											padding-left: 1rem;
+											border-left: 2px solid #ccc;
+											color: #2d3748 !important;
+										}
 									`}
 								</style>
 							</>
